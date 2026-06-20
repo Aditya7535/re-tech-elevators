@@ -5,7 +5,9 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Services | RE-TECH ELEVATORS PVT. LTD.</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet"/>
+<link href="https://fonts.cdnfonts.com/css/nexa-light" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind Configuration -->
 <script id="tailwind-config">
@@ -76,12 +78,13 @@
                     "margin-mobile": "16px"
             },
             "fontFamily": {
-                    "title-md": ["Hanken Grotesk"],
-                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Nexa Heavy", "sans-serif"],
+                    "title-md": ["Nexa Heavy", "sans-serif"],
+                    "body-md": ["Nexa Light", "sans-serif"],
+                    "display-lg": ["Nexa Heavy", "sans-serif"],
+                    "body-lg": ["Nexa Light", "sans-serif"],
                     "label-sm": ["JetBrains Mono"],
-                    "body-lg": ["Inter"],
-                    "display-lg": ["Hanken Grotesk"],
-                    "body-md": ["Inter"]
+                    "headline-lg": ["Nexa Heavy", "sans-serif"]
             },
             "fontSize": {
                     "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
@@ -113,46 +116,75 @@
         .vertical-panel-active {
             background: #00666c;
         }
+        /* Enhanced Typography Effects */
+        h1, h2, h3, .font-display-lg, .font-headline-lg, .font-title-md {
+            text-shadow: 0 4px 24px rgba(0,0,0,0.6);
+        }
+        .text-primary, .text-primary-fixed-dim {
+            text-shadow: 0 0 20px rgba(0, 102, 108, 0.5);
+        }
+        p, span {
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
     </style>
 <script src="script.js" defer></script>
 </head>
-<body class="bg-background text-on-background font-body-md selection:bg-primary/20">
-<!-- TopNavBar -->
-<header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant shadow-sm">
-<nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-max-width mx-auto">
-<a class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight" href="index.html#home">
-                RE-TECH ELEVATORS
-            </a>
-<div class="hidden md:flex items-center gap-gutter">
-<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="index.html#home">Home</a>
-<a class="font-title-md text-title-md text-primary border-b-2 border-primary pb-1 font-bold" href="services.html">Services</a>
-<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="index.html#projects">Projects</a>
-<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About Us</a>
-<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="index.html#contact">Contact</a>
-<a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-title-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 inline-block" href="index.html#contact">
-                    Get a Quote
-                </a>
+<body class="bg-on-background text-white font-body-md selection:bg-primary/20 overflow-x-hidden">
+<!-- Fixed Background -->
+<div class="fixed inset-0 z-[-1] pointer-events-none">
+    <div class="absolute inset-0 opacity-40 bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('ServiceBG.png');"></div>
+    <div class="absolute inset-0 bg-on-background/80"></div>
 </div>
-<button class="md:hidden text-on-surface-variant">
+<!-- Fade Transition Overlay -->
+<div id="fade-overlay" class="fixed inset-0 bg-on-background z-[9999] pointer-events-none transition-opacity duration-500 opacity-100"></div>
+
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 bg-on-background/80 backdrop-blur-md border-b border-white/10 shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-4 lg:px-margin-desktop py-4 max-w-max-width mx-auto">
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-4" href="index.html#home">
+<img alt="RE-TECH ELEVATORS LOGO" class="h-12 md:h-20 w-auto" src="logo.png"/>
+<span class="hidden lg:block font-headline-lg text-headline-lg font-bold text-primary tracking-tight">RE-TECH ELEVATORS</span>
+</a>
+</div>
+<div class="hidden md:flex items-center gap-8 font-title-md text-title-md">
+<a class="text-white/80 hover:text-primary transition-colors" href="index.html#home">Home</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold" href="services.html">Services</a>
+<a class="text-white/80 hover:text-primary transition-colors" href="projects.html">Projects</a>
+<a class="text-white/80 hover:text-primary transition-colors" href="about.html">About Us</a>
+<a class="text-white/80 hover:text-primary transition-colors" href="index.html#contact">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden md:flex bg-primary text-white px-6 py-2.5 hover:bg-primary-container transition-all font-bold shadow-sm items-center gap-2 rounded-xl border border-primary" href="index.html#contact">Get a Quote<span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+<button class="md:hidden text-white/80" id="mobile-menu-btn">
 <span class="material-symbols-outlined">menu</span>
 </button>
+</div>
+</div>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="absolute inset-x-0 top-0 bg-on-background/95 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300 transform -translate-y-full opacity-0 -z-10 pointer-events-none">
+    <div class="pt-24 pb-8 px-4 flex flex-col gap-6 h-screen overflow-y-auto">
+        <a class="text-white text-2xl font-bold font-headline-lg text-center" href="index.html#home" onclick="closeMobileMenu()">Home</a>
+        <a class="text-white/80 hover:text-primary text-xl font-bold font-headline-lg text-center transition-colors" href="services.html" onclick="closeMobileMenu()">Services</a>
+        <a class="text-white/80 hover:text-primary text-xl font-bold font-headline-lg text-center transition-colors" href="projects.html" onclick="closeMobileMenu()">Projects</a>
+        <a class="text-white/80 hover:text-primary text-xl font-bold font-headline-lg text-center transition-colors" href="about.html" onclick="closeMobileMenu()">About Us</a>
+        <a class="text-white/80 hover:text-primary text-xl font-bold font-headline-lg text-center transition-colors" href="index.html#contact" onclick="closeMobileMenu()">Contact</a>
+        <a class="bg-primary text-white border border-primary/50 px-6 py-4 rounded-xl font-bold text-center mt-4 mx-4 shadow-xl" href="index.html#contact" onclick="closeMobileMenu()">Get a Quote</a>
+    </div>
+</div>
 </nav>
-</header>
 <main>
 <!-- Hero Section -->
 <section class="relative h-[819px] flex items-center overflow-hidden">
-<div class="absolute inset-0 z-0">
-<div class="absolute inset-0 bg-on-background/60 z-10"></div>
-<div class="w-full h-full bg-cover bg-center" data-alt="A high-angle architectural shot looking up into a modern, polished stainless steel elevator shaft with glass viewing panels. The lighting is cold and clinical, emphasizing the metallic textures and geometric precision. Teal ambient lights glow from the floor indicators, reflecting off the brushed metal surfaces. The atmosphere is industrial yet luxurious, showcasing engineering excellence." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvrphISs8vmSf8EucfyW2RfCUp-2wsu6esXOhabfOy7CwBWdaDGRckzFdcEDrn3WGOeyyEqS0Sz-wmx5IFjZz-AxW_VYLbtyoKgTwdcIJ8o3DBG3q0LvmLq1nk1N0bHsjlaREpKLqfMa4Rp_ynq9mIF6Bwy6HW9MdW1gK5ivez-JHFCxvm9mNAUUaxtEZJpLG1KZUxGnpA2HPB_09zjcPBx_3Uy2j-Ki9kTUMbp1FuUdnIpO8Chwx4GLYUUdOKuzLAHBjavlQ3YCAQ')"></div>
-</div>
-<div class="relative z-20 max-w-max-width mx-auto px-margin-desktop w-full">
+
+<div class="relative z-20 max-w-max-width mx-auto px-4 lg:px-margin-desktop w-full">
 <div class="max-w-2xl">
 <span class="font-label-sm text-label-sm text-primary-fixed-dim bg-primary/20 px-3 py-1 mb-6 inline-block rounded">ENGINEERING EXCELLENCE</span>
-<h1 class="font-display-lg text-display-lg text-on-primary mb-6">Precision Engineering for Every Floor</h1>
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-white mb-6">Precision Engineering for Every Floor</h1>
 <p class="font-body-lg text-body-lg text-surface-variant mb-8 max-w-lg">Advanced vertical transportation systems designed for reliability, safety, and seamless movement in the world's most demanding environments.</p>
 <div class="flex gap-4">
 <button class="bg-primary text-on-primary px-8 py-4 rounded font-title-md hover:bg-primary-container transition-colors">View Technologies</button>
-<a class="border border-surface-variant text-on-primary px-8 py-4 rounded font-title-md hover:bg-white/10 transition-colors backdrop-blur-sm inline-block" href="index.html#projects">Our Portfolio</a>
+<a class="border border-surface-variant text-on-primary px-8 py-4 rounded font-title-md hover:bg-white/10 transition-colors backdrop-blur-sm inline-block" href="projects.html">Our Portfolio</a>
 </div>
 </div>
 </div>
@@ -168,22 +200,22 @@
 </div>
 </section>
 <!-- Service Categories - Bento Grid Style -->
-<section class="py-24 max-w-max-width mx-auto px-margin-desktop">
+<section class="py-24 max-w-max-width mx-auto px-4 lg:px-margin-desktop text-white">
 <div class="mb-16">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Service Solutions</h2>
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">Service Solutions</h2>
 <div class="w-24 h-1 bg-primary"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 <!-- Residential -->
-<div class="md:col-span-8 group relative overflow-hidden bg-surface-container rounded-lg p-base metallic-gradient border border-outline-variant hover:border-primary transition-all duration-500">
+<div class="md:col-span-8 group relative overflow-hidden bg-white/5 backdrop-blur-sm rounded-lg p-base metallic-gradient border border-white/10 hover:border-primary transition-all duration-500">
 <div class="flex flex-col md:flex-row h-full">
 <div class="p-8 md:w-1/2 flex flex-col justify-center">
 <span class="font-label-sm text-label-sm text-primary mb-4 block">PREMIUM LIVING</span>
-<h3 class="font-headline-lg text-headline-lg mb-4">Residential Elevators</h3>
-<p class="font-body-md text-on-surface-variant mb-6">Designed for quiet operation and extreme space efficiency. Our home lifts integrate seamlessly into high-end interiors with customizable cabin finishes.</p>
-<ul class="space-y-2 mb-8">
-<li class="flex items-center gap-2 font-label-sm text-on-surface"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Ultra-Quiet Drive Systems</li>
-<li class="flex items-center gap-2 font-label-sm text-on-surface"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Compact Shaft Footprint</li>
+<h3 class="font-headline-lg text-headline-lg mb-4 text-white">Residential Elevators</h3>
+<p class="font-body-md text-white/70 mb-6">Designed for quiet operation and extreme space efficiency. Our home lifts integrate seamlessly into high-end interiors with customizable cabin finishes.</p>
+<ul class="space-y-2 mb-8 text-white">
+<li class="flex items-center gap-2 font-label-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Ultra-Quiet Drive Systems</li>
+<li class="flex items-center gap-2 font-label-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Compact Shaft Footprint</li>
 </ul>
 <a class="font-title-md text-primary flex items-center gap-2 group-hover:gap-4 transition-all" href="#">Explore Residential <span class="material-symbols-outlined">arrow_forward</span></a>
 </div>
@@ -194,50 +226,50 @@
 <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </div>
 <!-- Commercial -->
-<div class="md:col-span-4 group relative overflow-hidden bg-surface-container rounded-lg p-8 border border-outline-variant hover:border-primary transition-all duration-500">
+<div class="md:col-span-4 group relative overflow-hidden bg-white/5 backdrop-blur-sm rounded-lg p-8 border border-white/10 hover:border-primary transition-all duration-500">
 <div class="mb-8 p-4 bg-primary/10 w-fit rounded">
 <span class="material-symbols-outlined text-primary text-4xl">business</span>
 </div>
-<h3 class="font-headline-lg text-headline-lg mb-4">Commercial</h3>
-<p class="font-body-md text-on-surface-variant mb-8">High-speed, large-capacity systems for corporate hubs and retail centers. Optimized for peak-hour efficiency.</p>
+<h3 class="font-headline-lg text-headline-lg mb-4 text-white">Commercial</h3>
+<p class="font-body-md text-white/70 mb-8">High-speed, large-capacity systems for corporate hubs and retail centers. Optimized for peak-hour efficiency.</p>
 <div class="w-full h-48 rounded mb-6 overflow-hidden">
 <div class="w-full h-full bg-cover bg-center" data-alt="A row of high-speed commercial elevators in a gleaming corporate lobby with marble floors and glass walls. The elevators feature large, digital floor displays and brushed steel doors. The scene is bright and professional, with cool white lighting reflecting off the polished surfaces, symbolizing efficiency and high-capacity urban transit." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA83Aam3EKMw4rHG9xWGIh8griq_jDlJAUs3lpSbe9RJZnyLMWZgqo5xinXJWXqJNGXZxFt1vXiWMgLzfxBfIbvL2QXad6RF1GAxrKx_9bKk3UJViNd7C07JbweK72jdcK3szidRw3KhRQ3Q4S54TEUL57Sb0ZU0H3rKVQXhg45CHCa9-iZutgR2z3_HDV0RUVRKNJLu2wLWguOxbF5PeKsLzf-QGABAbLpwR1l7IVA0QXxp80VFabDBXSGF1E31jEbJO-g8lmxJskK')"></div>
 </div>
-<ul class="space-y-2 font-label-sm text-on-surface mb-8">
+<ul class="space-y-2 font-label-sm text-white mb-8">
 <li>• Destination Control Systems</li>
 <li>• 2.5m/s+ Travel Speeds</li>
 </ul>
 </div>
 <!-- Hospital & Freight -->
-<div class="md:col-span-4 group relative overflow-hidden bg-surface-container rounded-lg p-8 border border-outline-variant hover:border-primary transition-all duration-500">
+<div class="md:col-span-4 group relative overflow-hidden bg-white/5 backdrop-blur-sm rounded-lg p-8 border border-white/10 hover:border-primary transition-all duration-500">
 <div class="mb-8 p-4 bg-primary/10 w-fit rounded">
 <span class="material-symbols-outlined text-primary text-4xl">precision_manufacturing</span>
 </div>
-<h3 class="font-headline-lg text-headline-lg mb-4">Hospital &amp; Freight</h3>
-<p class="font-body-md text-on-surface-variant mb-8">Heavy-duty engineering with millimeter-level leveling precision for medical stretchers and industrial loads.</p>
-<ul class="space-y-2 font-label-sm text-on-surface">
+<h3 class="font-headline-lg text-headline-lg mb-4 text-white">Hospital &amp; Freight</h3>
+<p class="font-body-md text-white/70 mb-8">Heavy-duty engineering with millimeter-level leveling precision for medical stretchers and industrial loads.</p>
+<ul class="space-y-2 font-label-sm text-white">
 <li>• Reinforced Flooring</li>
 <li>• Precise Leveling Accuracy</li>
 <li>• Antimicrobial Interior Options</li>
 </ul>
 </div>
 <!-- 24/7 Maintenance -->
-<div class="md:col-span-8 group relative overflow-hidden bg-on-background rounded-lg p-8 border border-outline-variant transition-all duration-500">
+<div class="md:col-span-8 group relative overflow-hidden bg-white/5 backdrop-blur-sm rounded-lg p-8 border border-white/10 transition-all duration-500">
 <div class="flex flex-col md:flex-row items-center gap-12 h-full">
 <div class="md:w-1/2">
 <div class="mb-8 p-4 bg-primary w-fit rounded shadow-lg shadow-primary/30">
-<span class="material-symbols-outlined text-on-primary text-4xl">engineering</span>
+<span class="material-symbols-outlined text-white text-4xl">engineering</span>
 </div>
-<h3 class="font-headline-lg text-headline-lg text-on-primary mb-4">24/7 Support &amp; Maintenance</h3>
-<p class="font-body-md text-surface-variant mb-8">Our commitment to safety never sleeps. Proactive monitoring and rapid-response teams ensure zero downtime for your critical infrastructure.</p>
+<h3 class="font-headline-lg text-headline-lg text-white mb-4">24/7 Support &amp; Maintenance</h3>
+<p class="font-body-md text-white/70 mb-8">Our commitment to safety never sleeps. Proactive monitoring and rapid-response teams ensure zero downtime for your critical infrastructure.</p>
 <div class="grid grid-cols-2 gap-4">
-<div class="bg-surface-variant/10 p-4 rounded border border-surface-variant/20">
+<div class="bg-white/10 backdrop-blur-md p-4 rounded border border-white/10">
 <div class="text-primary font-bold text-xl mb-1">30min</div>
-<div class="text-on-primary-fixed-variant text-xs uppercase tracking-wider">Avg Response Time</div>
+<div class="text-white/70 text-xs uppercase tracking-wider">Avg Response Time</div>
 </div>
-<div class="bg-surface-variant/10 p-4 rounded border border-surface-variant/20">
+<div class="bg-white/10 backdrop-blur-md p-4 rounded border border-white/10">
 <div class="text-primary font-bold text-xl mb-1">99.9%</div>
-<div class="text-on-primary-fixed-variant text-xs uppercase tracking-wider">Uptime Guarantee</div>
+<div class="text-white/70 text-xs uppercase tracking-wider">Uptime Guarantee</div>
 </div>
 </div>
 </div>
@@ -250,96 +282,96 @@
 </div>
 </section>
 <!-- Technical Specs & Safety Features -->
-<section class="py-24 bg-surface-container-low border-y border-outline-variant">
-<div class="max-w-max-width mx-auto px-margin-desktop">
+<section class="py-24 border-y border-white/10 text-white bg-on-background/40">
+<div class="max-w-max-width mx-auto px-4 lg:px-margin-desktop">
 <div class="text-center mb-16">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Specifications</span>
-<h2 class="font-headline-lg text-headline-lg mt-4">Technological Core</h2>
+<h2 class="font-headline-lg text-headline-lg mt-4 text-white">Technological Core</h2>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
 <!-- Feature 1: Motor Tech -->
-<div class="bg-surface p-8 rounded border border-outline-variant tech-tag-accent shadow-sm">
+<div class="bg-white/5 backdrop-blur-sm p-8 rounded border border-white/10 tech-tag-accent shadow-sm">
 <div class="font-label-sm text-primary mb-4">01 / DRIVE SYSTEMS</div>
 <h4 class="font-title-md text-title-md mb-6">Gearless Traction Machines</h4>
-<p class="font-body-md text-on-surface-variant mb-6">Utilizing permanent magnet synchronous motors (PMSM) for energy efficiency and smoother acceleration profiles.</p>
+<p class="font-body-md text-white/70 mb-6">Utilizing permanent magnet synchronous motors (PMSM) for energy efficiency and smoother acceleration profiles.</p>
 <div class="space-y-4">
-<div class="flex justify-between items-center border-b border-outline-variant pb-2">
-<span class="font-body-md text-secondary">Energy Saving</span>
-<span class="font-label-sm text-on-surface">Up to 40%</span>
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="font-body-md text-white/70">Energy Saving</span>
+<span class="font-label-sm text-white">Up to 40%</span>
 </div>
-<div class="flex justify-between items-center border-b border-outline-variant pb-2">
-<span class="font-body-md text-secondary">Lubrication</span>
-<span class="font-label-sm text-on-surface">Oil-Free</span>
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="font-body-md text-white/70">Lubrication</span>
+<span class="font-label-sm text-white">Oil-Free</span>
 </div>
 </div>
 </div>
 <!-- Feature 2: Safety -->
-<div class="bg-surface p-8 rounded border border-outline-variant tech-tag-accent shadow-sm">
+<div class="bg-white/5 backdrop-blur-sm p-8 rounded border border-white/10 tech-tag-accent shadow-sm">
 <div class="font-label-sm text-primary mb-4">02 / SAFETY PROTOCOLS</div>
 <h4 class="font-title-md text-title-md mb-6">Redundant Braking Systems</h4>
-<p class="font-body-md text-on-surface-variant mb-6">Triple-layer safety mechanisms including electronic overspeed governors and seismic sensor integration.</p>
+<p class="font-body-md text-white/70 mb-6">Triple-layer safety mechanisms including electronic overspeed governors and seismic sensor integration.</p>
 <div class="space-y-4">
-<div class="flex justify-between items-center border-b border-outline-variant pb-2">
-<span class="font-body-md text-secondary">Certification</span>
-<span class="font-label-sm text-on-surface">EN-81 Standards</span>
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="font-body-md text-white/70">Certification</span>
+<span class="font-label-sm text-white">EN-81 Standards</span>
 </div>
-<div class="flex justify-between items-center border-b border-outline-variant pb-2">
-<span class="font-body-md text-secondary">Emergency Return</span>
-<span class="font-label-sm text-on-surface">Automatic (ARD)</span>
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="font-body-md text-white/70">Emergency Return</span>
+<span class="font-label-sm text-white">Automatic (ARD)</span>
 </div>
 </div>
 </div>
 <!-- Feature 3: Smart Tech -->
-<div class="bg-surface p-8 rounded border border-outline-variant tech-tag-accent shadow-sm">
+<div class="bg-white/5 backdrop-blur-sm p-8 rounded border border-white/10 tech-tag-accent shadow-sm">
 <div class="font-label-sm text-primary mb-4">03 / SMART CONNECT</div>
 <h4 class="font-title-md text-title-md mb-6">IoT Diagnostics</h4>
-<p class="font-body-md text-on-surface-variant mb-6">Cloud-based monitoring that predicts component wear before failure, minimizing unplanned downtime.</p>
+<p class="font-body-md text-white/70 mb-6">Cloud-based monitoring that predicts component wear before failure, minimizing unplanned downtime.</p>
 <div class="space-y-4">
-<div class="flex justify-between items-center border-b border-outline-variant pb-2">
-<span class="font-body-md text-secondary">Monitoring</span>
-<span class="font-label-sm text-on-surface">Real-Time Cloud</span>
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="font-body-md text-white/70">Monitoring</span>
+<span class="font-label-sm text-white">Real-Time Cloud</span>
 </div>
-<div class="flex justify-between items-center border-b border-outline-variant pb-2">
-<span class="font-body-md text-secondary">Updates</span>
-<span class="font-label-sm text-on-surface">OTA Enabled</span>
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="font-body-md text-white/70">Updates</span>
+<span class="font-label-sm text-white">OTA Enabled</span>
 </div>
 </div>
 </div>
 </div>
 <!-- Comparison Table -->
 <div class="mt-16 overflow-x-auto">
-<table class="w-full border-collapse bg-surface rounded-lg overflow-hidden">
+<table class="w-full border-collapse bg-white/5 rounded-lg overflow-hidden backdrop-blur-md">
 <thead>
-<tr class="bg-on-background text-on-primary">
-<th class="p-6 text-left font-title-md border-r border-surface-variant/20">Feature</th>
-<th class="p-6 text-center font-title-md border-r border-surface-variant/20">Elite (Residential)</th>
-<th class="p-6 text-center font-title-md border-r border-surface-variant/20">Velocity (Commercial)</th>
+<tr class="bg-primary/20 text-white">
+<th class="p-6 text-left font-title-md border-r border-white/10">Feature</th>
+<th class="p-6 text-center font-title-md border-r border-white/10">Elite (Residential)</th>
+<th class="p-6 text-center font-title-md border-r border-white/10">Velocity (Commercial)</th>
 <th class="p-6 text-center font-title-md">Titan (Freight)</th>
 </tr>
 </thead>
-<tbody class="font-body-md text-on-surface">
-<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
-<td class="p-6 border-r border-outline-variant font-bold">Max Capacity</td>
-<td class="p-6 text-center border-r border-outline-variant">450 kg (6 Persons)</td>
-<td class="p-6 text-center border-r border-outline-variant">1600 kg (21 Persons)</td>
+<tbody class="font-body-md text-white/90">
+<tr class="border-b border-white/10 hover:bg-white/10 transition-colors">
+<td class="p-6 border-r border-white/10 font-bold">Max Capacity</td>
+<td class="p-6 text-center border-r border-white/10">450 kg (6 Persons)</td>
+<td class="p-6 text-center border-r border-white/10">1600 kg (21 Persons)</td>
 <td class="p-6 text-center">5000+ kg</td>
 </tr>
-<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
-<td class="p-6 border-r border-outline-variant font-bold">Max Speed</td>
-<td class="p-6 text-center border-r border-outline-variant">0.4 m/s</td>
-<td class="p-6 text-center border-r border-outline-variant">Up to 4.0 m/s</td>
+<tr class="border-b border-white/10 hover:bg-white/10 transition-colors">
+<td class="p-6 border-r border-white/10 font-bold">Max Speed</td>
+<td class="p-6 text-center border-r border-white/10">0.4 m/s</td>
+<td class="p-6 text-center border-r border-white/10">Up to 4.0 m/s</td>
 <td class="p-6 text-center">1.0 m/s</td>
 </tr>
-<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
-<td class="p-6 border-r border-outline-variant font-bold">Drive Type</td>
-<td class="p-6 text-center border-r border-outline-variant">MRL Traction / Hydraulic</td>
-<td class="p-6 text-center border-r border-outline-variant">Gearless Traction</td>
+<tr class="border-b border-white/10 hover:bg-white/10 transition-colors">
+<td class="p-6 border-r border-white/10 font-bold">Drive Type</td>
+<td class="p-6 text-center border-r border-white/10">MRL Traction / Hydraulic</td>
+<td class="p-6 text-center border-r border-white/10">Gearless Traction</td>
 <td class="p-6 text-center">Heavy-Duty Traction</td>
 </tr>
-<tr class="hover:bg-surface-container-low transition-colors">
-<td class="p-6 border-r border-outline-variant font-bold">Safety Level</td>
-<td class="p-6 text-center border-r border-outline-variant">SIL3 Certified</td>
-<td class="p-6 text-center border-r border-outline-variant">SIL3 Certified</td>
+<tr class="hover:bg-white/10 transition-colors">
+<td class="p-6 border-r border-white/10 font-bold">Safety Level</td>
+<td class="p-6 text-center border-r border-white/10">SIL3 Certified</td>
+<td class="p-6 text-center border-r border-white/10">SIL3 Certified</td>
 <td class="p-6 text-center">SIL3 + Industrial Grade</td>
 </tr>
 </tbody>
@@ -348,66 +380,63 @@
 </div>
 </section>
 <!-- CTA Section -->
-<section class="relative py-32 overflow-hidden bg-on-background">
-<div class="absolute inset-0 opacity-20 pointer-events-none">
-
-</div>
-<div class="max-w-max-width mx-auto px-margin-desktop text-center relative z-10">
-<h2 class="font-display-lg text-display-lg text-on-primary mb-8">Ready to Elevate Your Project?</h2>
-<p class="font-body-lg text-body-lg text-surface-variant mb-12 max-w-2xl mx-auto">Our team of senior engineers is ready to help you navigate the complexities of vertical transportation design and logistics.</p>
+<section class="relative py-32 overflow-hidden">
+<div class="max-w-max-width mx-auto px-4 lg:px-margin-desktop text-center relative z-10 text-white">
+<h2 class="font-display-lg text-display-lg text-white mb-8">Ready to Elevate Your Project?</h2>
+<p class="font-body-lg text-body-lg text-white/70 mb-12 max-w-2xl mx-auto">Our team of senior engineers is ready to help you navigate the complexities of vertical transportation design and logistics.</p>
 <div class="flex flex-col sm:flex-row gap-6 justify-center">
-<a class="bg-primary text-on-primary px-10 py-5 rounded font-title-md text-lg hover:shadow-[0_0_20px_rgba(0,102,108,0.5)] transition-all inline-block" href="index.html#contact">Consult an Engineer</a>
-<a class="border-2 border-primary text-primary px-10 py-5 rounded font-title-md text-lg hover:bg-primary hover:text-on-primary transition-all inline-block" href="#">Request Technical Datasheet</a>
+<a class="bg-primary text-white px-10 py-5 rounded font-title-md text-lg hover:shadow-[0_0_20px_rgba(0,102,108,0.5)] transition-all inline-block border border-primary" href="index.html#contact">Consult an Engineer</a>
+<a class="border-2 border-primary text-primary px-10 py-5 rounded font-title-md text-lg hover:bg-primary hover:text-white transition-all inline-block" href="#">Request Technical Datasheet</a>
 </div>
 <div class="mt-16 flex items-center justify-center gap-12 flex-wrap opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
-<span class="font-label-sm text-surface-variant flex items-center gap-2"><span class="material-symbols-outlined">verified</span> ISO 9001 CERTIFIED</span>
-<span class="font-label-sm text-surface-variant flex items-center gap-2"><span class="material-symbols-outlined">security</span> CE SAFETY MARK</span>
-<span class="font-label-sm text-surface-variant flex items-center gap-2"><span class="material-symbols-outlined">eco</span> LEED CONTRIBUTOR</span>
+<span class="font-label-sm text-white/70 flex items-center gap-2"><span class="material-symbols-outlined">verified</span> ISO 9001 CERTIFIED</span>
+<span class="font-label-sm text-white/70 flex items-center gap-2"><span class="material-symbols-outlined">security</span> CE SAFETY MARK</span>
+<span class="font-label-sm text-white/70 flex items-center gap-2"><span class="material-symbols-outlined">eco</span> LEED CONTRIBUTOR</span>
 </div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-highest border-t border-outline-variant">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-max-width mx-auto">
-<div class="col-span-1 md:col-span-1">
-<div class="font-title-md text-title-md font-bold text-on-surface mb-6">RE-TECH ELEVATORS</div>
-<p class="font-body-md text-on-surface-variant mb-6">Engineering excellence and safety in every vertical journey.</p>
-<div class="flex gap-4">
-<a class="text-primary hover:text-primary-container transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
-<a class="text-primary hover:text-primary-container transition-colors" href="#"><span class="material-symbols-outlined">hub</span></a>
-<a class="text-primary hover:text-primary-container transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
-</div>
-</div>
-<div>
-<h4 class="font-title-md text-on-surface font-bold mb-6">Solutions</h4>
-<ul class="space-y-4 font-body-md text-on-surface-variant">
-<li><a class="hover:text-primary transition-colors" href="#">Residential Lifts</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Commercial Systems</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Industrial Freight</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Custom Projects</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-title-md text-on-surface font-bold mb-6">Company</h4>
-<ul class="space-y-4 font-body-md text-on-surface-variant">
-<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Maintenance Portal</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Safety Standards</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-title-md text-on-surface font-bold mb-6">Contact</h4>
-<ul class="space-y-4 font-body-md text-on-surface-variant">
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1">location_on</span> HQ: 124 Engineering Plaza, Tech Park</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">mail</span> contact@retech-elevators.com</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">phone_in_talk</span> +1 (555) 012-3456</li>
-</ul>
-</div>
-</div>
-<div class="border-t border-outline-variant/30 py-6 text-center px-margin-desktop">
-<p class="font-body-md text-on-surface-variant/70">© 2024 RE-TECH ELEVATORS PVT. LTD. Engineering Excellence &amp; Safety.</p>
-</div>
+<footer class="py-12 border-t border-white/10 bg-on-background/40 backdrop-blur-md">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-4 lg:px-margin-desktop max-w-max-width mx-auto">
+        <div class="col-span-1 md:col-span-1">
+            <div class="font-title-md text-title-md font-bold text-white mb-6 block">RE-TECH ELEVATORS</div>
+            <p class="font-body-md text-white/70 mb-6">Engineering excellence and safety in every vertical journey.</p>
+            <div class="flex gap-4">
+                <a class="w-10 h-10 bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-primary hover:text-white transition-all rounded-xl" href="#"><span class="material-symbols-outlined text-white">language</span></a>
+                <a class="w-10 h-10 bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-primary hover:text-white transition-all rounded-xl" href="#"><span class="material-symbols-outlined text-white">hub</span></a>
+                <a class="w-10 h-10 bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-primary hover:text-white transition-all rounded-xl" href="#"><span class="material-symbols-outlined text-white">share</span></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="font-bold mb-6 uppercase font-label-sm text-label-sm text-primary">Solutions</h4>
+            <ul class="space-y-3 font-body-md text-body-md text-white/70">
+                <li><a class="hover:text-primary transition-colors" href="services.html">Residential Lifts</a></li>
+                <li><a class="hover:text-primary transition-colors" href="services.html">Commercial Systems</a></li>
+                <li><a class="hover:text-primary transition-colors" href="services.html">Industrial Freight</a></li>
+                <li><a class="hover:text-primary transition-colors" href="services.html">Custom Projects</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold mb-6 uppercase font-label-sm text-label-sm text-primary">Company</h4>
+            <ul class="space-y-3 font-body-md text-body-md text-white/70">
+                <li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                <li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+                <li><a class="hover:text-primary transition-colors" href="#">Maintenance Portal</a></li>
+                <li><a class="hover:text-primary transition-colors" href="#">Safety Standards</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold mb-6 uppercase font-label-sm text-label-sm text-primary">Contact</h4>
+            <ul class="space-y-3 font-body-md text-body-md text-white/70">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1">location_on</span> HQ: 124 Engineering Plaza, Tech Park</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">mail</span> contact@retech-elevators.com</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">phone_in_talk</span> +1 (555) 012-3456</li>
+            </ul>
+        </div>
+    </div>
+    <div class="border-t border-white/10 mt-12 pt-8 text-center px-4 lg:px-margin-desktop">
+        <p class="font-body-md text-white/70">© 2024 RE-TECH ELEVATORS PVT. LTD. Engineering Excellence &amp; Safety.</p>
+    </div>
 </footer>
 </body></html>
